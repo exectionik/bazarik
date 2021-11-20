@@ -1,4 +1,4 @@
-package com.bazarik.inzertnyportal.model;
+package main.inzertnyportal.item;
 
 public enum Category {
     ELECTRO,

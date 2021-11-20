@@ -1,6 +1,7 @@
-package com.bazarik.inzertnyportal;
+package main.inzertnyportal;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
