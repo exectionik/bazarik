@@ -37,21 +37,6 @@ public class PersonServiceImpl implements  PersonService{
 
     }
 
-
-/*
-    @Override
-    public Long getUserId() {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String email = userDetails.getUsername();
-        Optional<Users> user = userRepository.findByEmail(email);
-        return user.get().getId();
-    }
-
-    @Override
-    public Optional<Users> getUserById(Long id) {
-        return userRepository.findById(id);
-    }
-   */
     @Override
     public Person getCurrentUser() {
         UserDetails userDetails = (UserDetails) SecurityContextHolder
