@@ -54,8 +54,22 @@ public class ItemController {
         return service.sort(sort);
     }
     @PutMapping("/item/{id}")
-    public void editItem(@RequestBody Item item,@PathVariable long id){
-        service.updateItem(item);
+    public Item editItem(@RequestBody Item newitem,@PathVariable long id) {
+
+        return itemRepository.findById(id)
+                .map(item -> {
+                    item.setImage(newitem.getImage());
+                    item.setCategory(newitem.getCategory());
+                    item.setPrice(newitem.getPrice());
+                    item.setDescription(newitem.getDescription());
+                    item.setName(newitem.getName());
+                    return itemRepository.save(item);
+                })
+                .orElseGet(() -> {
+                    return itemRepository.save(newitem);
+                });
     }
+
+
 
 }
