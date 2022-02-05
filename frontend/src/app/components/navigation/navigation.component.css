@@ -1,0 +1,21 @@
+section {
+  display: table;
+}
+
+.panel
+{
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+
+
+}
+.buttons{
+  display: table-cell;
+  width: 490px;
+}
+.buttons .mat-button-base {
+  margin: 8px 8px 8px 0;
+  background-color: #525252;
+}

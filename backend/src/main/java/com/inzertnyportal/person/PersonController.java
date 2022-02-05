@@ -1,6 +1,7 @@
 package com.inzertnyportal.person;
 
 import com.inzertnyportal.dto.UserRegistrationDto;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,5 +17,8 @@ public class PersonController {
        return personService.save(userRegistrationDto);
 
     }
-
+    @GetMapping("/currentuser")
+    public Person getUser(){
+    return personService.getCurrentUser();
+}
 }

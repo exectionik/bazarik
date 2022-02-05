@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+<div class="buttons">
+<input routerLink="/login" (click)="Submit()" type="submit" value="Odhlásiť sa" >
+<input routerLink="/userinfo" type="submit" value="Informácie o použivateľovi" >
+</div>
+<div class="items">
+    <div *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="buble">
+      <img class="img" [src]="item.image">
+      <div class="name">{{item.name}}</div>
+      <div class="price">{{item.price}}€</div>
+      <div><input (click)="Delete(item)" type="submit" value="Odstrániť" ></div>
+    </div>
+</div>

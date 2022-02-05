@@ -1,0 +1,17 @@
+<app-navigation xmlns="http://www.w3.org/1999/html"></app-navigation>
+<div class="box">
+  <div *ngIf="item">
+      <div class="name">{{item.name}}</div>
+    <div><img [src]="item.image"></div>
+      <div><span class="descriptionText">Popis:</span> <span class="description">{{item.description}}</span></div>
+      <div><span class="textPrice">Cena:</span> <span class="price">{{item.price}}€</span></div>
+      <div class="contact" *ngIf="person">
+        <div class="contactInformation">Kontaktné údaje</div>
+        <div><span class="nameUserText">Meno: </span><span class="nameUser">{{person.firstName}} {{person.lastName}}</span></div>
+        <div><span class="addressText">Mesto: </span><span class="address">{{person.city}}</span></div>
+        <div><span class="telephoneText">Telefónne číslo: </span><span class="telephone">{{person.phoneNumber}}</span></div>
+        <div><span class="emailText">Email: </span><span class="email">{{person.email}}</span></div>
+      </div>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>

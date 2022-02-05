@@ -22,7 +22,7 @@ public class ItemController {
 
 
 
-    @PostMapping("/items")
+    @PostMapping("/saveitem")
     public void saveItem(@RequestBody Item item){
         service.saveItem(item);
 
@@ -34,7 +34,7 @@ public class ItemController {
 
         return service.detail(id);
     }
-    @GetMapping("/searchitems")
+    @GetMapping("/searchitem")
     public Iterable<Item> search(@RequestParam String search){
 
         return itemRepository.findByNameOrDescriptionContaining(search);

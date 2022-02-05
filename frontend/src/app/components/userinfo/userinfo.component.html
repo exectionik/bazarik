@@ -1,0 +1,9 @@
+<app-navigation></app-navigation>
+<div class="box">
+  <div *ngIf="person">
+      <div><span class="nameUserText">Meno: </span><span class="nameUser">{{person.firstName}} {{person.lastName}}</span></div>
+      <div><span class="addressText">Adresa: </span><span class="address">{{person.city}}</span></div>
+      <div><span class="telephoneText">Telefónne číslo: </span><span class="telephone">{{person.phoneNumber}}</span></div>
+      <div><span class="emailText">Email: </span><span class="email">{{person.email}}</span></div>
+  </div>
+</div>

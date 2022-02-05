@@ -1,0 +1,14 @@
+<app-navigation></app-navigation>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active"> Pridať inzerát </h2>
+
+    <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+      <input formControlName="name" type="text" id="name" name="name" placeholder="Názov">
+      <input formControlName="description" type="text" id="description" name="description" placeholder="Popis">
+      <input formControlName="price" type="number" id="price" name="price" placeholder="Cena">
+      <input formControlName="image" type="text" id="image" name="image" placeholder="Obrázok">
+      <input [disabled]="!submit" type="submit" value="Pridať inzerát" >
+    </form>
+  </div>
+</div>
