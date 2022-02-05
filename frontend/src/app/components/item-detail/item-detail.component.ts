@@ -3,8 +3,9 @@ import { Item } from '../../models/item';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
-import {PersonService} from "../../services/person.service";
 import {Person} from "../../models/person";
+import {EMPTY, Observable} from "rxjs";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-item-detail',
@@ -15,13 +16,13 @@ export class ItemDetailComponent implements OnInit {
 
   item?: Item;
   person?: Person;
-
+  currentUser$: Observable<Person | null> = EMPTY;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private itemService: ItemService,
-    private personService: PersonService) {}
+    private authService: AuthService) {}
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -29,6 +30,7 @@ export class ItemDetailComponent implements OnInit {
       .subscribe(item => {
         this.item = item; this.person = item.person;
       });
+    this.currentUser$ = this.authService.user$;
   }
 
   goBack(): void {

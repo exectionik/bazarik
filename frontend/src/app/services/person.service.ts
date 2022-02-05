@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Person } from "../models/person";
 import {REST_API} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {Item} from "../models/item";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class PersonService {
   }
 
   getUserInfo(): Observable<Person> {
-    const url = `${REST_API}/user/`;
+    const url = `${REST_API}/currentuser`;
     return this.http.get<Person>(url)
   }
 }

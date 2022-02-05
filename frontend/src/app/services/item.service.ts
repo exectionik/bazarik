@@ -32,6 +32,10 @@ export class ItemService {
     return this.http.post(REST_API + '/saveitem', item);
   }
 
+  editItem(id: number, item: Item): Observable<Item> {
+    return this.http.put<Item>(`${REST_API}/item/${id}`, item);
+  }
+
   getUserItems(): Observable<Item[]> {
     return this.http.get<Item[]>(REST_API + '/showuseritems')
   }

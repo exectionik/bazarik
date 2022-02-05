@@ -1,10 +1,9 @@
-import { ItemService } from '../../services/item.service';
-import { Item } from '../../models/item';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
-import {PersonService} from "../../services/person.service";
 import {Person} from "../../models/person";
+import {AuthService} from "../../services/auth.service";
+import {EMPTY, Observable} from "rxjs";
 
 @Component({
   selector: 'app-userinfo',
@@ -13,25 +12,19 @@ import {Person} from "../../models/person";
 })
 export class UserinfoComponent implements OnInit {
 
-  person?: Person;
-
+  user$: Observable<Person | null> = EMPTY;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private personService: PersonService) { }
+    private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.getUserInfo();
+    this.user$ = this.authService.user$;
   }
 
   goBack(): void {
     this.location.back();
-  }
-
-  getUserInfo(): void{
-    this.personService.getUserInfo()
-      .subscribe(persons => this.person = persons);
   }
 
 }

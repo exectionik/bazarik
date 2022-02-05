@@ -8,14 +8,20 @@
     <section>
       <div class="panel">
       <div class="buttons">
+                <button mat-button routerLink="/category" color="primary">DOMOV</button>
 
+        <ng-container *ngIf="user$ | async as user; else odhlaseny">
+          <button mat-button routerLink="/saveitem" color="primary">PRIDAŤ INZERÁT</button>
+          <button mat-button routerLink="/user/" color="primary">MOJE KONTO</button>
+          <button mat-button color="primary" (click)="logout()">ODHLÁSIŤ SA</button>
+          {{user.email}}
+        </ng-container>
 
-        <button mat-button color="primary"><a mat-button  routerLink="/category" target="blank">DOMOV</a></button>
-        <button mat-button color="primary"><a mat-button  routerLink="/login" target="blank">PRIHLÁSIŤ SA</a></button>
-        <button mat-button color="primary"><a mat-button  routerLink="/saveitem" target="blank">PRIDAŤ INZERÁT</a></button>
-        <button mat-button color="primary"><a mat-button  routerLink="/user/" target="blank">MOJE KONTO</a></button>
-        <button mat-button color="primary"><a mat-button  routerLink="/" target="blank">ODHLÁSIŤ SA</a></button>
+        <!-- <img src="assets/autocomplete.scene.png"> -->
 
+        <ng-template #odhlaseny>
+          <button mat-button routerLink="/login" color="primary">PRIHLÁSIŤ SA</button>
+        </ng-template>
 
       </div>
       </div>

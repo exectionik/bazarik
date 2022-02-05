@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Item} from "../../models/item";
 import {ItemService} from "../../services/item.service";
 import {AuthService} from "../../services/auth.service";
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userpage',

@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests().antMatchers(
-                        "/register",  "/detailitem/{id}", "/sortitems", "/searchitem","/showcategory/{category}","/currentuser").permitAll()
+                        "/register",  "/detailitem/{id}", "/sortitems", "/searchitem", "/showcategory/{category}", "/currentuser").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .cors().and()
