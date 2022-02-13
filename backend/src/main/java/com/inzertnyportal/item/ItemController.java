@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 public class ItemController {
@@ -70,6 +71,11 @@ public class ItemController {
                 });
     }
 
+    @GetMapping("/showuseritems")
+    public Set<Item> showUserItems() {
 
+
+        return personService.getCurrentUser().getItems();
+    }
 
 }

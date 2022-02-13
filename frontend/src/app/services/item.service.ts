@@ -6,13 +6,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 import {REST_API} from "../../environments/environment";
 import {Category} from "../models/category";
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
   private itemsUrl = 'api/items'
-
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(private http: HttpClient) { }
 
   getItem(id: number): Observable<Item> {

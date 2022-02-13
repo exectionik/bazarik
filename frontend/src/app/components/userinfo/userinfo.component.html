@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="box">
   <div *ngIf="user$ | async as person">
       <div><span class="nameUserText">Meno: </span><span class="nameUser">{{person.firstName}} {{person.lastName}}</span></div>
@@ -6,3 +7,4 @@
       <div><span class="emailText">Email: </span><span class="email">{{person.email}}</span></div>
   </div>
 </div>
+<app-userpage></app-userpage>

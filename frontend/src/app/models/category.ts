@@ -3,5 +3,6 @@ export enum Category {
   HOME = 'HOME',
   CARS = 'CARS',
   HOBBY = 'HOBBY',
-  CLOTHES = 'CLOTHES'
+  CLOTHES = 'CLOTHES',
+  KIDS = 'KIDS'
 }

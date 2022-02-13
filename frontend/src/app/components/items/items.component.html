@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="dropdown">
     <button class="dropbtn">Zoradiť podľa</button>
     <div class="dropdown-content">
@@ -15,7 +16,7 @@
 </form>
 </div>
 
-<hr>
+
 <div class="items">
     <div *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="buble">
       <img class="img" [src]="item.image">

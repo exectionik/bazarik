@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card {
+  padding: 16px;
+  width: 400px;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.buttons {
+  float: right;
+}
+
+.buttons > button + button {
+  margin-left: 10px;
+}

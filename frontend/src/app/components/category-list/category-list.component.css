@@ -1,0 +1,21 @@
+.mainpage{
+
+}
+.imagepart{
+  height: 300px;
+  width: 200px;
+  float: left;
+  margin-left: 200px;
+  text-align: center;
+
+
+}
+.categoryimage{
+  height: 200px;
+  width: 200px;
+  margin-bottom: 20px;
+
+}
+.description{
+  margin-top: 300px;
+}

@@ -5,5 +5,6 @@ public enum Category {
     HOME,
     CARS,
     CLOTHES,
-    HOBBY
+    HOBBY,
+    KIDS
 }

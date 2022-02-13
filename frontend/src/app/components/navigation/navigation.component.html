@@ -1,32 +1,20 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="main">
-<div class="title">
-  <h1>{{title}}</h1>
-</div>
-
-
-
-    <section>
-      <div class="panel">
-      <div class="buttons">
-                <button mat-button routerLink="/category" color="primary">DOMOV</button>
-
-        <ng-container *ngIf="user$ | async as user; else odhlaseny">
-          <button mat-button routerLink="/saveitem" color="primary">PRIDAŤ INZERÁT</button>
-          <button mat-button routerLink="/user/" color="primary">MOJE KONTO</button>
-          <button mat-button color="primary" (click)="logout()">ODHLÁSIŤ SA</button>
-          {{user.email}}
-        </ng-container>
-
-        <!-- <img src="assets/autocomplete.scene.png"> -->
-
-        <ng-template #odhlaseny>
-          <button mat-button routerLink="/login" color="primary">PRIHLÁSIŤ SA</button>
-        </ng-template>
-
-      </div>
-      </div>
-    </section>
-
-
-
+  <div class="title">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="panel">
+    <button mat-button routerLink="/category" color="primary">DOMOV</button>
+    <ng-container *ngIf="user$ | async as user; else odhlaseny" class="userpanel">
+      <button mat-button routerLink="/saveitem" color="primary">PRIDAŤ INZERÁT</button>
+      <button mat-button routerLink="/user/" color="primary">MOJE KONTO</button>
+      <span class="userinfo">
+                <button mat-button color="primary" (click)="logout()" >ODHLÁSIŤ SA</button>
+                <span>{{user.email}}</span>
+            </span>
+    </ng-container>
+    <ng-template #odhlaseny >
+      <span class="userinfo"><button mat-button routerLink="/login" color="primary" >PRIHLÁSIŤ SA</button></span>
+    </ng-template>
+  </div>
 </div>

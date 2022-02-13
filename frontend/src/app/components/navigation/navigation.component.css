@@ -1,21 +1,26 @@
-section {
-  display: table;
-}
-
-.panel
-{
-  display: table-cell;
+.panel{
   font-size: 14px;
   margin-left: 8px;
   min-width: 120px;
 
+  display: flex;
+  justify-content: left;
+}
 
-}
-.buttons{
-  display: table-cell;
-  width: 490px;
-}
 .buttons .mat-button-base {
   margin: 8px 8px 8px 0;
   background-color: #525252;
+}
+
+.userpanel{
+  display: inline-flex;
+  flex: 1;
+}
+
+.userinfo{
+  margin-left: auto;
+}
+.title{
+  text-align: center;
+  font-family: "Comic Sans MS";
 }

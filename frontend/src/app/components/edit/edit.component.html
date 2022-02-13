@@ -1,0 +1,38 @@
+<div *ngIf="editForm" class="container">
+  <mat-card>
+    <form [formGroup]="editForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price" type="number">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="ELECTRO">Electro</mat-option>
+          <mat-option value="HOME">Home</mat-option>
+          <mat-option value="CARS">Cars</mat-option>
+          <mat-option value="KIDS">Kids</mat-option>
+          <mat-option value="HOBBY">Hobby</mat-option>
+          <mat-option value="CLOTHES">Clothes</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="image">
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-stroked-button color="secondary" [routerLink]="['/detail', item?.id]">Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="!editForm.valid" (click)="submit()">Edit</button>
+        <button mat-raised-button color="primary" (click)="delete()" color="accent">Delete</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
