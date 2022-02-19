@@ -1,12 +1,16 @@
 .box{
   display: block;
-  padding: 7px;
-  background-color: #F5F5F5;
-  border: 1px solid #E1E1E8;
-  border-radius: 3px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  font-family: Menlo, Monaco;
-  line-height: 160%;
+  padding-top: 20px;
+  width: 400px;
+  text-align: left;
+
+
+}
+.text{
+  font-weight: bold;
+}
+.main{
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }

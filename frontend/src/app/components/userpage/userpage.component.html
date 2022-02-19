@@ -1,8 +1,11 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="items">
-  <div *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="buble">
-    <img class="img" [src]="item.image">
-    <div class="name">{{item.name}}</div>
-    <div class="price">{{item.price}}€</div>
+<div class="main">
+<div class="container">
+<div *ngFor="let item of items " [routerLink]="['/detail', item.id]"  class="inzerat">
+  <img [src]="item.image" class="obrazok">
+  <div class="full">
+    <div class="info">{{item.name}} </div>
+    <div class="info1">{{item.price}} €</div>
   </div>
+</div>
+</div>
 </div>

@@ -34,6 +34,10 @@ export class FormspageComponent implements OnInit {
 
   addItem():void{
     this.itemService.addItem(this.itemForm.value)
-      .subscribe(() => this.router.navigateByUrl('/items'));
+      .subscribe(() => this.router.navigateByUrl(`/category/${this.itemForm.value.category} `));
+  }
+  change(event: Event){
+    (event.target as HTMLElement).style.height = "auto";
+    (event.target as HTMLElement).style.height = (event.target as HTMLElement).scrollHeight + 'px'
   }
 }

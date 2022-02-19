@@ -1,26 +1,81 @@
+*{
+  text-decoration: none;
+}
+a{
+  color: white;
+}
 .panel{
   font-size: 14px;
-  margin-left: 8px;
-  min-width: 120px;
+  background-color: lightcoral;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
 
-  display: flex;
-  justify-content: left;
 }
 
-.buttons .mat-button-base {
-  margin: 8px 8px 8px 0;
-  background-color: #525252;
+
+.loginb{
+  color: white;
+  background-color: #2E2E2E;
+  text-shadow: 2px 2px 4px #000000;
+  border-radius: 50px;
+
+}
+.loginb:hover{
+  background-color: crimson;
 }
 
 .userpanel{
   display: inline-flex;
   flex: 1;
+  background-color: white;
+  border-radius: 50px;
+
 }
 
-.userinfo{
-  margin-left: auto;
+
+.userinfo {
+  margin-left: 10px;
+  display: inline-block;
+  background-color: #2E2E2E;
+  color: white;
+  border-radius: 50px;
+
 }
 .title{
   text-align: center;
   font-family: "Comic Sans MS";
+  background-color: crimson;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+
+
+
+}
+.main{
+
+  text-align: center;
+
+}
+.home{
+  background-color: #2E2E2E;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-right: 180px;
+  border-radius: 50px;
+}
+.home:hover{
+  background-color: crimson;
+}
+.logged{
+  border-radius: 50px;
+  background-color: #2E2E2E;
+  margin-right: 20px;
+  color: white;
+}
+.logged:hover{
+  background-color: crimson;
 }

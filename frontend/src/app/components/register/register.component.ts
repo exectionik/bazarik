@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     city: new FormControl("", Validators.required),
     phoneNumber: new FormControl("", Validators.required),
   });
-
+  hide=true;
   get submit(): boolean {
     return this.userForm.valid;
   }
@@ -34,5 +34,7 @@ export class RegisterComponent implements OnInit {
     this.personService.addUser(this.userForm.value)
       .subscribe(() => this.router.navigateByUrl('/login'));
   }
+  myFunction():void{
 
+  }
 }

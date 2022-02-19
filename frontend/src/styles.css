@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-body { margin: auto;
-  background-color: white;
+body {
+  background-color: whitesmoke;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  max-width: 1000px;
+  margin: -1px;
+
 }

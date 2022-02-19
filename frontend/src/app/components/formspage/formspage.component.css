@@ -1,15 +1,26 @@
 .kolonka{
-  height: 30px;
-  width: 300px;
-  text-align: center;
-  float: left;
   font-size: 15px;
-  margin: 20px 350px ;
+  text-align: center;
+  width: 500px;
 }
+
 .title{
   text-align: center;
 }
-.tlacidlo{
-  float: right;
-  margin: 20px 440px;
+
+.popiskolonka{
+  text-align: center;
+  font-size: 15px;
+}
+
+.formular{
+  display: flex;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }

@@ -13,7 +13,8 @@ import {map} from "rxjs/operators";
 })
 export class CategoryComponent implements OnInit {
 
-  items: Observable<Item[]> = EMPTY;
+  items: Item[] = [];
+  sortBy: string = 'name';
 
 
   constructor(
@@ -25,10 +26,21 @@ export class CategoryComponent implements OnInit {
     const category = this.route.snapshot.paramMap.get('category');
 
     if (!!category) {
-      this.items = this.itemService.getItemsByCategory(category as Category);
+      this.itemService.getItemsByCategory(category as Category).subscribe(items =>this.items=items);
     }
   }
 
+  sortItem(sortBy: string){
+    this.sortBy = sortBy
+    this.sort();
+  }
 
+  sort() {
+    if (this.sortBy === 'name')
+      this.items.sort((a, b) => a.name.localeCompare(b.name));
+
+    if (this.sortBy === 'price')
+      this.items.sort((a, b) => a.price > b.price ? 1 : -1);
+  }
 
 }

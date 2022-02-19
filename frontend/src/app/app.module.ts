@@ -15,7 +15,6 @@ import {ItemsComponent} from "./components/items/items.component";
 import {LoginComponent} from "./components/login/login.component";
 import {NavigationComponent} from "./components/navigation/navigation.component";
 import {RegisterComponent} from "./components/register/register.component";
-import {SortingComponent} from "./components/sorting/sorting.component";
 import {UserinfoComponent} from "./components/userinfo/userinfo.component";
 import {UserpageComponent} from "./components/userpage/userpage.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -24,6 +23,7 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import {AuthInterceptor} from "./interceptor/auth.interceptor";
 import { EditComponent } from './components/edit/edit.component';
 import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -35,7 +35,6 @@ import {MatInputModule} from "@angular/material/input";
     LoginComponent,
     NavigationComponent,
     RegisterComponent,
-    SortingComponent,
     UserinfoComponent,
     UserpageComponent,
     CategoryComponent,
@@ -55,6 +54,7 @@ import {MatInputModule} from "@angular/material/input";
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,
+        MatIconModule
     ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

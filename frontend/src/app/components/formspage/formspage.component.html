@@ -1,39 +1,36 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="">
-  <div id="formContent">
-    <h2 class="title"> Pridať inzerát </h2>
 
-    <form [formGroup]="itemForm" (ngSubmit)="addItem()">
-      <mat-form-field appearance="fill" class="kolonka">
-        <mat-label >Názov</mat-label>
-        <input matInput formControlName="name" type="text" id="name" name="name" placeholder="Názov">
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="kolonka">
-        <mat-label>Popis</mat-label>
-        <input matInput formControlName="description" type="text" id="description" name="description" placeholder="Popis" >
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="kolonka">
-        <mat-label>Cena</mat-label>
-        <input matInput formControlName="price" type="number" id="price" name="price" placeholder="Cena">
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="kolonka">
-        <mat-label>Obrázok</mat-label>
-        <input matInput formControlName="image" type="text" id="image" name="image" placeholder="Obrázok">
-      </mat-form-field>
+<h2 class="title"> Pridať inzerát </h2>
+<div class="formular">
+  <form class="form" [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <mat-form-field appearance="fill" class="kolonka">
+      <mat-label >Názov</mat-label>
+      <input matInput formControlName="name" type="text" id="name" name="name" placeholder="Názov">
+    </mat-form-field>
+    <mat-form-field class="popiskolonka" appearance="fill">
+      <mat-label>Popis</mat-label>
+      <textarea (input)="change($event)" matInput formControlName="description" type="text" id="description" name="description" placeholder="Popis predavaného predmetu"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="kolonka">
+      <mat-label>Cena</mat-label>
+      <input matInput formControlName="price" type="number" id="price" name="price" placeholder="Cena">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="kolonka">
+      <mat-label>Obrázok</mat-label>
+      <input matInput formControlName="image" type="text" id="image" name="image" placeholder="Obrázok">
+    </mat-form-field>
 
-      <mat-form-field appearance="fill" class="kolonka">
-        <mat-label>Kategória</mat-label>
-        <mat-select formControlName="category">
-          <mat-option value="ELECTRO">Elektro</mat-option>
-          <mat-option value="HOME">Home</mat-option>
-          <mat-option value="KIDS">Kids</mat-option>
-          <mat-option value="CLOTHES">Clothes</mat-option>
-          <mat-option value="CARS">Cars</mat-option>
-          <mat-option value="HOBBY">Hobby</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field appearance="fill" class="kolonka">
+      <mat-label>Kategória</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="ELECTRO">Elektro</mat-option>
+        <mat-option value="HOME">Dom a záhrada</mat-option>
+        <mat-option value="KIDS">Deti</mat-option>
+        <mat-option value="CLOTHES">Oblečenie</mat-option>
+        <mat-option value="CARS">Autá</mat-option>
+        <mat-option value="HOBBY">Hobby</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <button mat-raised-button  [disabled]="!submit" type="submit" color="primary" class="tlacidlo">Pridať inzerát</button>
-    </form>
-  </div>
+    <button mat-raised-button [disabled]="!submit" type="submit" color="primary" class="tlacidlo">Pridať inzerát</button>
+  </form>
 </div>
