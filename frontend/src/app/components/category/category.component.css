@@ -38,6 +38,7 @@
   height: 30px;
   padding-top: 10px;
   background-color: lightgray;
+  font-size: 12px;
 
 }
 .info1{
@@ -59,5 +60,7 @@
   object-fit:scale-down;
   overflow: hidden;
   border-radius: 15% 15% 0% 0%;
+  position: center;
+  margin-left: 10px;
 
 }

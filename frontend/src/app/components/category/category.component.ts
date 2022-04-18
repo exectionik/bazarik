@@ -5,6 +5,7 @@ import {ItemService} from "../../services/item.service";
 import {ActivatedRoute} from "@angular/router";
 import {EMPTY, Observable} from "rxjs";
 import {map} from "rxjs/operators";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-category',
@@ -16,17 +17,20 @@ export class CategoryComponent implements OnInit {
   items: Item[] = [];
   sortBy: string = 'name';
 
-
   constructor(
     private itemService: ItemService,
     private route: ActivatedRoute,
+    private titleService: Title,
   ) { }
 
   ngOnInit(): void {
     const category = this.route.snapshot.paramMap.get('category');
 
-    if (!!category) {
-      this.itemService.getItemsByCategory(category as Category).subscribe(items =>this.items=items);
+    if (category) {
+      this.titleService.setTitle(`${category[0]}${category.substring(1).toLowerCase()} - predajto`);
+
+      this.itemService.getItemsByCategory(category as Category)
+        .subscribe(items => this.items=items);
     }
   }
 

@@ -3,10 +3,10 @@
   <div class="box">
   <div *ngIf="user$ | async as person">
       <div class="textu">Vaše používateľské údaje</div>
-      <div><span class="text">Meno: </span><span class="nameUser">{{person.firstName}} {{person.lastName}}</span></div>
-      <div><span class="text">Adresa: </span><span class="address">{{person.city}}</span></div>
-      <div><span class="text">Telefónne číslo: </span><span class="telephone">{{person.phoneNumber}}</span></div>
-      <div><span class="text">Email: </span><span class="email">{{person.email}}</span></div>
+      <div class="tex"><span class="text">Meno: </span><span class="nameUser">{{person.firstName}} {{person.lastName}}</span></div>
+      <div class="tex"><span class="text">Mesto: </span><span class="address">{{person.city}}</span></div>
+      <div class="tex"><span class="text">Telefónne číslo: </span><span class="telephone">{{person.phoneNumber}}</span></div>
+      <div class="tex"><span class="text">Email: </span><span class="email">{{person.email}}</span></div>
   </div>
 </div>
 </div>

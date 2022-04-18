@@ -13,16 +13,16 @@ import {AuthGuard} from "./guard/auth.guard";
 import {UserpageComponent} from "./components/userpage/userpage.component";
 
 const routes: Routes = [
-  { path: '', component: ItemsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'category', component: CategoryListComponent},
+  { path: '', redirectTo: 'category', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
+  { path: 'category', component: CategoryListComponent, data: { title: 'Categories' }},
   { path: 'category/:category', component: CategoryComponent },
-  {path: 'register', component: RegisterComponent},
-  {path: 'items', component:FormspageComponent},
-  {path:'detail/:id', component:ItemDetailComponent},
-  {path:'user', component:UserinfoComponent, canActivate: [AuthGuard]},
-  {path:'saveitem', component:FormspageComponent, canActivate: [AuthGuard]},
-  {path:'edit/:id', component:EditComponent, canActivate: [AuthGuard]},
+  { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
+  {path: 'items', component:FormspageComponent, data: { title: 'Items' }},
+  {path:'detail/:id', component:ItemDetailComponent, data: { title: 'Loading...' }},
+  {path:'user', component:UserinfoComponent, canActivate: [AuthGuard], data: { title: 'Profile' }},
+  {path:'saveitem', component:FormspageComponent, canActivate: [AuthGuard], data: { title: 'Create Post' }},
+  {path:'edit/:id', component:EditComponent, canActivate: [AuthGuard], data: { title: 'Edit Post' }},
   {path:'deleteitem/:id',component:UserpageComponent, canActivate: [AuthGuard]}
 ];
 

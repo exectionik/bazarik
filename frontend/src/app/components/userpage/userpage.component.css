@@ -38,6 +38,7 @@
   height: 30px;
   padding-top: 10px;
   background-color: lightgray;
+  font-size: 15px;
 
 }
 .info1{
@@ -51,6 +52,7 @@
   display: inline-block;
   margin-right: 10px;
 
+
 }
 .obrazok{
   width:  180px;
@@ -59,6 +61,7 @@
   object-fit:scale-down;
   overflow: hidden;
   border-radius: 15% 15% 0% 0%;
+  margin-left: 10px;
 
 }
 

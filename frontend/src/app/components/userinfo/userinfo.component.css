@@ -1,16 +1,36 @@
 .box{
   display: block;
-  padding-top: 20px;
+  margin-top: 20px;
   width: 400px;
   text-align: left;
-
-
+  height: auto;
+  border: #2E2E2E 2px solid;
+  border-top: none ;
+  float:right;
 }
 .text{
   font-weight: bold;
+  color: #2E2E2E;
+
+
+}
+.tex{
+ background-color: lightcoral;color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: #2E2E2E solid 2px;
 }
 .main{
   text-align: center;
   display: flex;
   justify-content: space-around;
+}
+.textu{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #2E2E2E;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }

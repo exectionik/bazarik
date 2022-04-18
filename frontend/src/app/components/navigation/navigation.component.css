@@ -64,8 +64,9 @@ a{
   background-color: #2E2E2E;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  margin-right: 180px;
   border-radius: 50px;
+  display: inline-flex;
+  margin-right: 100px ;
 }
 .home:hover{
   background-color: crimson;

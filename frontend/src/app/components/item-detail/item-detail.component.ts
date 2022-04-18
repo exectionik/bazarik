@@ -6,6 +6,7 @@ import { Location } from '@angular/common'
 import {Person} from "../../models/person";
 import {EMPTY, Observable} from "rxjs";
 import {AuthService} from "../../services/auth.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-item-detail',
@@ -22,13 +23,18 @@ export class ItemDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private itemService: ItemService,
-    private authService: AuthService) {}
+    private authService: AuthService,
+    private titleService: Title,
+  ) {}
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.itemService.getItem(id)
       .subscribe(item => {
-        this.item = item; this.person = item.person;
+        this.item = item;
+        this.person = item.person;
+
+        this.titleService.setTitle(`${item.name} - predajto`);
       });
     this.currentUser$ = this.authService.user$;
   }
